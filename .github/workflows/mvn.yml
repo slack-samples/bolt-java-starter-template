@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  lint:
+  mvn:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,6 +20,6 @@ jobs:
           java-version: ${{ matrix.java-version }}
           distribution: 'adopt'
       - name: Lint
-        run: mvn --batch-mode clean spotless:check
+        run: mvn --batch-mode spotless:check
       - name: Build & Test
-        run: mvn --batch-mode clean test -Dspotless.apply.skip
+        run: mvn --batch-mode test -Dspotless.apply.skip
