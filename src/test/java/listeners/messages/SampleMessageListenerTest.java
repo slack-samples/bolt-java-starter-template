@@ -1,6 +1,6 @@
 package listeners.messages;
 
-import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 import com.slack.api.app_backend.events.payload.EventsApiPayload;
@@ -10,7 +10,7 @@ import com.slack.api.methods.SlackApiException;
 import com.slack.api.methods.response.chat.ChatPostMessageResponse;
 import com.slack.api.model.event.MessageEvent;
 import java.io.IOException;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SampleMessageListenerTest {
 
