@@ -89,7 +89,7 @@ gradle run
 
 Every incoming request is routed to a "listener". Inside this directory, we group each listener based on the Slack Platform feature used, so `/listeners/shortcuts` handles incoming [Shortcuts](https://api.slack.com/interactivity/shortcuts) requests, `/listeners/views` handles [View submissions](https://api.slack.com/reference/interaction-payloads/views#view_submission) and so on.
 
-### `resources/logback.xml`
+### `/logback.xml`
 
 [`logback-classic`](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
 
