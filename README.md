@@ -29,10 +29,6 @@ export SLACK_APP_TOKEN=<your-app-token>
 
 ### Setup Your Local Project
 
-**NOTE**:
-If you chose to use Maven as build tool you can remove the `builde.gradle` file from this project.
-Similarly, If you chose to use Gradle as build tool you can remove the `pom.xml` file from this project.
-
 ```zsh
 # Clone this project onto your machine
 git clone https://github.com/slackapi/java-python-template.git
@@ -41,7 +37,8 @@ git clone https://github.com/slackapi/java-python-template.git
 cd bolt-java-template
 ```
 
-#### Maven
+<details><summary><h4>Maven: Run</h4></summary>
+<div>
 
 Ensure [maven](https://maven.apache.org/index.html) in installed on your local environment.
 * We recommend using [brew to install maven on mac](https://formulae.brew.sh/formula/maven)
@@ -55,7 +52,12 @@ mvn clean compile
 mvn exec:java -Dexec.mainClass="Main"
 ```
 
-#### Gradle
+**NOTE**: If you chose to use Maven as build tool you can remove the `builde.gradle` file from this project.
+
+</div>
+</details>
+<details><summary><h4>Gradle: Run</h4></summary>
+<div>
 
 Ensure [gradle](https://gradle.org/) in installed on your local environment.
 * We recommend using [brew to install gradle on mac](https://formulae.brew.sh/formula/gradle)
@@ -68,6 +70,10 @@ gradle test
 # Start your local server
 gradle run
 ```
+**NOTE**: If you chose to use Gradle as build tool you can remove the `pom.xml` file from this project.
+
+</div>
+</details>
 
 ## Project Structure
 
@@ -87,9 +93,8 @@ Every incoming request is routed to a "listener". Inside this directory, we grou
 
 [`logback-classic`](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
 
-## App Distribution / OAuth
-
-*NOTE:* if you do not require Oauth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OauthMain.java`
+<details><summary><h2>App Distribution / OAuth</h2></summary>
+<div>
 
 Only implement OAuth if you plan to distribute your application across multiple workspaces. A separate `OauthMain.java` file can be found with relevant OAuth settings.
 
@@ -112,4 +117,7 @@ Navigate to **OAuth & Permissions** in your app configuration and click **Add a 
 ```
 https://3cb89939.ngrok.io/slack/events/oauth_redirect
 ```
+</div>
+</details>
 
+*NOTE:* if you do not require Oauth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OauthMain.java`
