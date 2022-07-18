@@ -70,6 +70,7 @@ gradle test
 # Start your local server
 gradle run
 ```
+
 **NOTE**: If you chose to use Gradle as build tool you can remove the `pom.xml` file from this project.
 
 </div>
@@ -117,6 +118,7 @@ Navigate to **OAuth & Permissions** in your app configuration and click **Add a 
 ```
 https://3cb89939.ngrok.io/slack/events/oauth_redirect
 ```
+
 </div>
 </details>
 
