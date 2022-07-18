@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "gradle"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "tyrus-standalone-client"
+        versions: [ "2.x" ]
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "tyrus-standalone-client"
+        versions: [ "2.x" ]
