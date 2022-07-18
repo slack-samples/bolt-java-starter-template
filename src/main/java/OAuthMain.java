@@ -3,7 +3,7 @@ import com.slack.api.bolt.jetty.SlackAppServer;
 import com.slack.api.bolt.socket_mode.SocketModeApp;
 import listeners.Listeners;
 
-public class OauthMain {
+public class OAuthMain {
 
     public static void main(String[] args) throws Exception {
 
