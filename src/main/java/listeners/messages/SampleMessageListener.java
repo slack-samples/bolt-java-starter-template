@@ -14,13 +14,13 @@ public class SampleMessageListener implements BoltEventHandler<MessageEvent> {
     @Override
     public Response apply(EventsApiPayload<MessageEvent> pl, EventContext ctx) throws IOException, SlackApiException {
 
-        String message = pl.getEvent().getText() + ", how are you?";
+        String message = pl.getEvent().getText() + " :wave:";
         ChatPostMessageResponse chatPostMessageResponse = ctx.say(message);
 
         if (!chatPostMessageResponse.isOk()) {
             ctx.logger.error(chatPostMessageResponse.toString());
         }
 
-        return Response.ok(chatPostMessageResponse);
+        return Response.ok();
     }
 }
