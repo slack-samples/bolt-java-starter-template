@@ -36,7 +36,7 @@ public class SampleMessageListenerTest {
         Response res = sampleMessageCallback.apply(plMock, ctxMock);
 
         // Then
-        verify(ctxMock).say(greeting + ", how are you?");
-        assertEquals(res.getBody(), "{\"ok\":true}");
+        verify(ctxMock).say(greeting + " :wave:");
+        assertEquals(res.getStatusCode(), 200);
     }
 }

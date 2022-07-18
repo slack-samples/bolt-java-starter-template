@@ -9,7 +9,7 @@ import com.slack.api.bolt.request.builtin.SlashCommandRequest;
 import com.slack.api.bolt.response.Response;
 import org.junit.jupiter.api.Test;
 
-public class SampleMessageListenerTest {
+public class SampleCommandListenerTest {
 
     @Test
     public void testApply() {
