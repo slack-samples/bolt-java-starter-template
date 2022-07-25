@@ -28,7 +28,7 @@ public class SampleViewListener implements ViewSubmissionHandler {
         if (!errors.isEmpty()) {
             return ctx.ack(r -> r.responseAction("errors").errors(errors));
         }
-        // TODO: may store the stateValues and privateMetadata
+
         // Responding with an empty body means closing the modal now.
         // If your app has next steps, respond with other response_action and a modal view.
         return ctx.ack();
