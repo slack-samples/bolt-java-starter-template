@@ -31,7 +31,7 @@ export SLACK_APP_TOKEN=<your-app-token>
 
 ```zsh
 # Clone this project onto your machine
-git clone https://github.com/slackapi/java-python-template.git
+git clone https://github.com/slack-samples/java-python-template.git
 
 # Change into this project directory
 cd bolt-java-template
@@ -60,7 +60,7 @@ mvn exec:java -Dexec.mainClass="Main"
 <div>
 
 Ensure [gradle](https://gradle.org/) in installed on your local environment.
-* We recommend using [brew to install gradle on mac](https://formulae.brew.sh/formula/gradle)
+* We recommend using [brew to install gradle on macOS](https://formulae.brew.sh/formula/gradle)
 
 ```zsh
 # Make sure you have gradle installed
@@ -92,7 +92,7 @@ Every incoming request is routed to a "listener". Inside this directory, we grou
 
 ### `/logback.xml`
 
-[`logback-classic`](https://mvnrepository.com/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
+[`logback-classic`](https://search.maven.org/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
 
 ### Tests
 
@@ -117,10 +117,10 @@ This output should include a forwarding address for `http` and `https` (we'll us
 Forwarding   https://3cb89939.ngrok.io -> http://localhost:3000
 ```
 
-Navigate to **OAuth & Permissions** in your app configuration and click **Add a Redirect URL**. The redirect URL should be set to your `ngrok` forwarding address with the `slack/events/oauth_redirect` path appended. For example:
+Navigate to **OAuth & Permissions** in your app configuration and click **Add a Redirect URL**. The redirect URL should be set to your `ngrok` forwarding address with the `slack/oauth/callback` path appended. For example:
 
 ```
-https://3cb89939.ngrok.io/slack/events/oauth_redirect
+https://3cb89939.ngrok.io/slack/oauth/callback
 ```
 
 </div>

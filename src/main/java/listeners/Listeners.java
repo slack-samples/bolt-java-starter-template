@@ -17,7 +17,7 @@ public class Listeners {
     public static void register(App app) {
         for (ListenerProvider provider : getAllListeners()) {
             provider.register(app);
-            logger.info(provider.getClass().getSimpleName() + " Registered");
+            logger.info("{} Registered", provider.getClass().getSimpleName());
         }
     }
 

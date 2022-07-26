@@ -7,7 +7,7 @@ public class OAuthMain {
 
     public static void main(String[] args) throws Exception {
 
-        // App expects an env variable: SLACK_BOT_TOKEN
+        // App expects an env variable: SLACK_SIGNING_SECRET
         App apiApp = new App();
         Listeners.register(apiApp);
 
