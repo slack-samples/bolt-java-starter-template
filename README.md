@@ -18,7 +18,7 @@ Before getting started, make sure you have a development workspace where you hav
 
 Before you can run the app, you'll need to store some environment variables.
 
-1. Open your apps configuration page from this list, click **OAuth & Permissions** in the left hand menu, then copy the Bot User OAuth Token. You will store this in your environment as `SLACK_BOT_TOKEN`.
+1. Open your app's configuration page from this list, click **OAuth & Permissions** in the left hand menu, then copy the Bot User OAuth Token. You will store this in your environment as `SLACK_BOT_TOKEN`.
 2. Click **Basic Information** from the left hand menu and follow the steps in the App-Level Tokens section to create an app-level token with the `connections:write` scope. Copy this token. You will store this in your environment as `SLACK_APP_TOKEN`.
 
 ```zsh
@@ -31,7 +31,7 @@ export SLACK_APP_TOKEN=<your-app-token>
 
 ```zsh
 # Clone this project onto your machine
-git clone https://github.com/slack-samples/java-python-template.git
+git clone https://github.com/slack-samples/bolt-java-starter-template.git
 
 # Change into this project directory
 cd bolt-java-template
@@ -39,8 +39,8 @@ cd bolt-java-template
 
 #### Maven: Run
 
-Ensure [maven](https://maven.apache.org/index.html) in installed on your local environment.
-* We recommend using [brew to install maven on mac](https://formulae.brew.sh/formula/maven)
+Ensure [maven](https://maven.apache.org/index.html) is installed on your local environment.
+* We recommend using [brew to install maven on macOS](https://formulae.brew.sh/formula/maven)
 
 ```zsh
 # Install the dependencies and compile
@@ -56,13 +56,13 @@ mvn clean test
 mvn clean compile exec:java -Dexec.mainClass="Main"
 ```
 
-**NOTE**: If you chose to use Maven as build tool you can remove the `builde.gradle` file from this project.
+**NOTE**: If you chose to use Maven as your build tool you can remove the `builde.gradle` file from this project.
 
 ------
 
 #### Gradle: Run
 
-Ensure [gradle](https://gradle.org/) in installed on your local environment.
+Ensure [gradle](https://gradle.org/) is installed on your local environment.
 * We recommend using [brew to install gradle on macOS](https://formulae.brew.sh/formula/gradle)
 
 ```zsh
@@ -76,7 +76,7 @@ gradle spotlessApply
 gradle run
 ```
 
-**NOTE**: If you chose to use Gradle as build tool you can remove the `pom.xml` file from this project.
+**NOTE**: If you chose to use Gradle as your build tool you can remove the `pom.xml` file from this project.
 
 ## Project Structure
 
@@ -90,11 +90,11 @@ gradle run
 
 ### `/listeners`
 
-Every incoming request is routed to a "listener". Inside this directory, we group each listener based on the Slack Platform feature used, so `/listeners/shortcuts` handles incoming [Shortcuts](https://api.slack.com/interactivity/shortcuts) requests, `/listeners/views` handles [View submissions](https://api.slack.com/reference/interaction-payloads/views#view_submission) and so on.
+Every incoming request is routed to a "listener". Inside this directory, we group each listener based on the Slack Platform feature used, so `/listeners/shortcuts` handles incoming [Shortcuts](https://api.slack.com/interactivity/shortcuts) requests, `/listeners/views` handles [View submissions](https://api.slack.com/reference/interaction-payloads/views#view_submission), and so on.
 
 ### `/logback.xml`
 
-[`logback-classic`](https://search.maven.org/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
+[`logback-classic`](https://search.maven.org/artifact/ch.qos.logback/logback-classic) is imported as a dependency to configure the logs of the project, this configuration is defined in a [logback.xml](https://logback.qos.ch/manual/configuration.html) found in `src/main/resources/logback.xml`. Note that by default the project should be logging `debug` level logs for slack dependencies.
 
 ### Tests
 
@@ -102,7 +102,7 @@ This project provides some sample unit tests. They can be found in `src/test`. T
 
 ## App Distribution / OAuth
 
-Only implement OAuth if you plan to distribute your application across multiple workspaces. A separate `OauthMain.java` file can be found with relevant OAuth settings.
+Only implement OAuth if you plan to distribute your application across multiple workspaces. A separate `OAuthMain.java` file can be found with relevant OAuth settings.
 
 When using OAuth, Slack requires a public URL where it can send requests. In this template app, we've used [`ngrok`](https://ngrok.com/download). Checkout [this guide](https://ngrok.com/docs#getting-started-expose) for setting it up.
 
@@ -124,4 +124,4 @@ Navigate to **OAuth & Permissions** in your app configuration and click **Add a 
 https://3cb89939.ngrok.io/slack/oauth/callback
 ```
 
-*NOTE:* if you do not require Oauth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OauthMain.java`
+*NOTE:* if you do not require OAuth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OAuthMain.java`
