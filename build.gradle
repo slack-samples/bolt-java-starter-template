@@ -1,0 +1,52 @@
+plugins {
+	id 'application'
+	id "com.diffplug.spotless" version "6.7.2"
+}
+
+java {
+	sourceCompatibility = JavaVersion.VERSION_11
+	targetCompatibility = JavaVersion.VERSION_11
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation("ch.qos.logback:logback-classic:1.2.11")
+	// ***** SOCKET MODE DEPENDENCIES ***** -->
+	implementation("com.slack.api:bolt:1.24.0")
+	implementation("com.slack.api:bolt-socket-mode:1.24.0")
+	implementation("javax.websocket:javax.websocket-api:1.1")
+	implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:1.19")
+	// ***** OAUTH DEPENDENCIES *****
+	implementation("com.slack.api:bolt-jetty:1.24.0")
+	// ***** TEST DEPENDENCIES *****
+	testImplementation('org.junit.jupiter:junit-jupiter-engine:5.8.2')
+	testImplementation('org.mockito:mockito-core:4.6.1')
+}
+
+application {
+	mainClass = 'Main'
+}
+
+tasks.named('test') {
+	useJUnit()
+}
+
+spotless {
+	format 'misc', {
+		target '*.gradle', '.gitignore'
+		trimTrailingWhitespace()
+		indentWithTabs(4)
+		endWithNewline()
+	}
+	java {
+		palantirJavaFormat()
+	}
+	freshmark {
+		target '*.md'
+	}
+}
+
+compileJava.dependsOn spotlessApply

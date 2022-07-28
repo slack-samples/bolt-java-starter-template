@@ -1,37 +1,17 @@
-*.class
-
-*.log
-
-*.ctxt
-
-.mtj.tmp/
-
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-hs_err_pid*
-
+# General
 .checkstyle
 .classpath
 .externalToolBuilders/
 .project
-.gradle
 .settings/
 .idea/
 .env
 artifacts/
 src/main/webapp/WEB-INF/classes/
 src/main/webapp/WEB-INF/lib/
-target/
 *.iml
 *.ipr
 *.iws
-build/
 downloaded_files/
 node_modules/
 typescript-types/dist/
@@ -42,3 +22,37 @@ json-logs/raw*
 .DS_Store
 
 *.hprof
+
+# Java
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+hs_err_pid*
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle
+/build/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
