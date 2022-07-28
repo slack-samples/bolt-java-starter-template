@@ -19,7 +19,7 @@ Before getting started, make sure you have a development workspace where you hav
 Before you can run the app, you'll need to store some environment variables.
 
 1. Open your apps configuration page from this list, click **OAuth & Permissions** in the left hand menu, then copy the Bot User OAuth Token. You will store this in your environment as `SLACK_BOT_TOKEN`.
-2. Click ***Basic Information** from the left hand menu and follow the steps in the App-Level Tokens section to create an app-level token with the `connections:write` scope. Copy this token. You will store this in your environment as `SLACK_APP_TOKEN`.
+2. Click **Basic Information** from the left hand menu and follow the steps in the App-Level Tokens section to create an app-level token with the `connections:write` scope. Copy this token. You will store this in your environment as `SLACK_APP_TOKEN`.
 
 ```zsh
 # Replace with your app token and bot token
@@ -37,44 +37,46 @@ git clone https://github.com/slack-samples/java-python-template.git
 cd bolt-java-template
 ```
 
-<details><summary><h4>Maven: Run</h4></summary>
-<div>
+#### Maven: Run
 
 Ensure [maven](https://maven.apache.org/index.html) in installed on your local environment.
 * We recommend using [brew to install maven on mac](https://formulae.brew.sh/formula/maven)
 
 ```zsh
-# Make sure you have maven installed
 # Install the dependencies and compile
 mvn clean compile
 
-# Start your local server
-mvn exec:java -Dexec.mainClass="Main"
+# apply linter to your project
+mvn spotless:apply
+
+# Install the dependencies and test
+mvn clean test
+
+# Compile and start your local server
+mvn clean compile exec:java -Dexec.mainClass="Main"
 ```
 
 **NOTE**: If you chose to use Maven as build tool you can remove the `builde.gradle` file from this project.
 
-</div>
-</details>
-<details><summary><h4>Gradle: Run</h4></summary>
-<div>
+------
+
+#### Gradle: Run
 
 Ensure [gradle](https://gradle.org/) in installed on your local environment.
 * We recommend using [brew to install gradle on macOS](https://formulae.brew.sh/formula/gradle)
 
 ```zsh
-# Make sure you have gradle installed
 # Run tests
 gradle test
+
+# Apply linter to project
+gradle spotlessApply
 
 # Start your local server
 gradle run
 ```
 
 **NOTE**: If you chose to use Gradle as build tool you can remove the `pom.xml` file from this project.
-
-</div>
-</details>
 
 ## Project Structure
 
@@ -98,8 +100,7 @@ Every incoming request is routed to a "listener". Inside this directory, we grou
 
 This project provides some sample unit tests. They can be found in `src/test`. They are to be used as examples to show how unit tests can be implemented. **As you modify this project don't hesitate to modify, add, or remove these tests.**
 
-<details><summary><h2>App Distribution / OAuth</h2></summary>
-<div>
+## App Distribution / OAuth
 
 Only implement OAuth if you plan to distribute your application across multiple workspaces. A separate `OauthMain.java` file can be found with relevant OAuth settings.
 
@@ -122,8 +123,5 @@ Navigate to **OAuth & Permissions** in your app configuration and click **Add a 
 ```
 https://3cb89939.ngrok.io/slack/oauth/callback
 ```
-
-</div>
-</details>
 
 *NOTE:* if you do not require Oauth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OauthMain.java`
