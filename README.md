@@ -40,7 +40,7 @@ cd bolt-java-template
 #### Maven: Run
 
 Ensure [maven](https://maven.apache.org/index.html) is installed on your local environment.
-* We recommend using [brew to install maven on macOS](https://formulae.brew.sh/formula/maven)
+* We recommend using [brew to install Maven on macOS](https://formulae.brew.sh/formula/maven)
 
 ```zsh
 # Install the dependencies and compile
@@ -63,7 +63,7 @@ mvn clean compile exec:java -Dexec.mainClass="Main"
 #### Gradle: Run
 
 Ensure [gradle](https://gradle.org/) is installed on your local environment.
-* We recommend using [brew to install gradle on macOS](https://formulae.brew.sh/formula/gradle)
+* We recommend using [brew to install Gradle on macOS](https://formulae.brew.sh/formula/gradle)
 
 ```zsh
 # Run tests
