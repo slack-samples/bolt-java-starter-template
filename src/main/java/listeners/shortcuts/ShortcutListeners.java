@@ -6,6 +6,6 @@ import listeners.ListenerProvider;
 public class ShortcutListeners implements ListenerProvider {
     @Override
     public void register(App app) {
-        app.globalShortcut("sample-shortcut-id", new SampleGlobalShortcutListener());
+        app.globalShortcut("sample-shortcut-id", new SampleGlobalShortcutListener(app));
     }
 }

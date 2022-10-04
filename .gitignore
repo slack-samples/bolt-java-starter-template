@@ -17,7 +17,6 @@ node_modules/
 typescript-types/dist/
 
 logs/
-json-logs/raw*
 
 .DS_Store
 
@@ -55,4 +54,3 @@ buildNumber.properties
 gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
-
