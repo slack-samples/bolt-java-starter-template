@@ -1,4 +1,4 @@
-package models;
+package utils;
 
 public class Constants {
     private Constants() {}

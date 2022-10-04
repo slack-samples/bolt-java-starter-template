@@ -2,7 +2,7 @@ package listeners.views;
 
 import com.slack.api.bolt.App;
 import listeners.ListenerProvider;
-import models.Constants;
+import utils.Constants;
 
 public class ViewListeners implements ListenerProvider {
     @Override

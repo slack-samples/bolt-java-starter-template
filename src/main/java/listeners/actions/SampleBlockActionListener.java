@@ -16,8 +16,8 @@ import com.slack.api.methods.SlackApiException;
 import com.slack.api.model.view.View;
 import com.slack.api.util.json.GsonFactory;
 import java.io.IOException;
-import models.Constants;
-import models.MeetingArrangement;
+import utils.Constants;
+import utils.MeetingArrangement;
 
 public class SampleBlockActionListener implements BlockActionHandler {
     private final App app;

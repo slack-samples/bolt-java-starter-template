@@ -14,7 +14,7 @@ import com.slack.api.bolt.response.Response;
 import com.slack.api.methods.SlackApiException;
 import com.slack.api.model.view.View;
 import java.io.IOException;
-import models.Constants;
+import utils.Constants;
 
 public class SampleGlobalShortcutListener implements GlobalShortcutHandler {
 

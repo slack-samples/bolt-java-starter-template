@@ -2,7 +2,7 @@ package listeners.actions;
 
 import com.slack.api.bolt.App;
 import listeners.ListenerProvider;
-import models.Constants;
+import utils.Constants;
 
 public class ActionListeners implements ListenerProvider {
     @Override

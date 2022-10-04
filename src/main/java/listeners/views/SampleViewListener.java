@@ -5,7 +5,7 @@ import com.slack.api.bolt.handler.builtin.ViewSubmissionHandler;
 import com.slack.api.bolt.request.builtin.ViewSubmissionRequest;
 import com.slack.api.bolt.response.Response;
 import java.util.HashMap;
-import models.Constants;
+import utils.Constants;
 
 public class SampleViewListener implements ViewSubmissionHandler {
 
