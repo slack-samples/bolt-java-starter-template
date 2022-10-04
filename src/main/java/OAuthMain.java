@@ -8,7 +8,7 @@ public class OAuthMain {
     public static void main(String[] args) throws Exception {
 
         // App expects an env variable: SLACK_SIGNING_SECRET
-        App apiApp = new App();
+        var apiApp = new App();
         Listeners.register(apiApp);
 
         // OAuth Flow Handler App
@@ -16,10 +16,10 @@ public class OAuthMain {
         //   SLACK_CLIENT_ID, SLACK_CLIENT_SECRET, SLACK_REDIRECT_URI, SLACK_SCOPES,
         //   SLACK_INSTALL_PATH, SLACK_REDIRECT_URI_PATH
         //   SLACK_OAUTH_COMPLETION_URL, SLACK_OAUTH_CANCELLATION_URL
-        App oauthApp = new App().asOAuthApp(true);
+        var oauthApp = new App().asOAuthApp(true);
 
-        SocketModeApp socketModeApp = new SocketModeApp(apiApp);
-        SlackAppServer oauthServer = new SlackAppServer(oauthApp);
+        var socketModeApp = new SocketModeApp(apiApp);
+        var oauthServer = new SlackAppServer(oauthApp);
 
         // SocketModeApp expects an env variable: SLACK_APP_TOKEN
         socketModeApp.startAsync();

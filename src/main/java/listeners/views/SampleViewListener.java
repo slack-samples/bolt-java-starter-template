@@ -4,26 +4,30 @@ import com.slack.api.bolt.context.builtin.ViewSubmissionContext;
 import com.slack.api.bolt.handler.builtin.ViewSubmissionHandler;
 import com.slack.api.bolt.request.builtin.ViewSubmissionRequest;
 import com.slack.api.bolt.response.Response;
-import com.slack.api.model.view.View;
-import com.slack.api.model.view.ViewState;
 import java.util.HashMap;
-import java.util.Map;
+import models.Constants;
 
 public class SampleViewListener implements ViewSubmissionHandler {
 
     @Override
     public Response apply(ViewSubmissionRequest req, ViewSubmissionContext ctx) {
+        // For view submission handling, calling ack() within 3 seconds is recommended
+        // It's still possible to use app.executorService() for async code execution,
+        // but with that, you cannot respond with errors in the case of validation errors.
 
-        View view = req.getPayload().getView();
-        String privateMetadata = view.getPrivateMetadata();
+        var view = req.getPayload().getView();
+        var privateMetadata = view.getPrivateMetadata();
         ctx.logger.info(privateMetadata);
 
-        Map<String, Map<String, ViewState.Value>> stateValues = view.getState().getValues();
-        String agenda = stateValues.get("agenda-block").get("agenda-action").getValue();
+        var stateValues = view.getState().getValues();
+        var agenda = stateValues
+                .get(Constants.BlockIds.AGENDA)
+                .get(Constants.ActionIds.AGENDA)
+                .getValue();
 
-        Map<String, String> errors = new HashMap<>();
+        var errors = new HashMap<String, String>();
         if (agenda.length() <= 10) {
-            errors.put("agenda-block", "Agenda needs to be longer than 10 characters.");
+            errors.put(Constants.BlockIds.AGENDA, "Agenda needs to be longer than 10 characters.");
         }
         if (!errors.isEmpty()) {
             return ctx.ack(r -> r.responseAction("errors").errors(errors));

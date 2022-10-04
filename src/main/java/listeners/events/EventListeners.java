@@ -7,6 +7,6 @@ import listeners.ListenerProvider;
 public class EventListeners implements ListenerProvider {
     @Override
     public void register(App app) {
-        app.event(AppHomeOpenedEvent.class, new AppHomeOpenedListener());
+        app.event(AppHomeOpenedEvent.class, new AppHomeOpenedListener(app));
     }
 }

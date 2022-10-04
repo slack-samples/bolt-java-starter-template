@@ -2,10 +2,11 @@ package listeners.actions;
 
 import com.slack.api.bolt.App;
 import listeners.ListenerProvider;
+import models.Constants;
 
 public class ActionListeners implements ListenerProvider {
     @Override
     public void register(App app) {
-        app.blockAction("category-selection-action", new SampleBlockActionListener());
+        app.blockAction(Constants.ActionIds.CATEGORY, new SampleBlockActionListener(app));
     }
 }
