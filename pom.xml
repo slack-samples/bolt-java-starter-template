@@ -66,18 +66,18 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.4</version>
+            <version>1.4.5</version>
         </dependency>
         <!-- ***** SOCKET MODE DEPENDENCIES ***** -->
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt</artifactId>
-            <version>1.27.0</version>
+            <version>1.27.1</version>
         </dependency>
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt-socket-mode</artifactId>
-            <version>1.27.0</version>
+            <version>1.27.1</version>
         </dependency>
         <dependency>
             <groupId>javax.websocket</groupId>
@@ -93,7 +93,7 @@
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt-jetty</artifactId>
-            <version>1.27.0</version>
+            <version>1.27.1</version>
         </dependency>
         <!-- ***** TEST DEPENDENCIES ***** -->
         <dependency>
