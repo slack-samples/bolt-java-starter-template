@@ -16,7 +16,7 @@ dependencies {
 	implementation("ch.qos.logback:logback-classic:1.4.5")
 	// ***** SOCKET MODE DEPENDENCIES ***** -->
 	implementation("com.slack.api:bolt:1.27.2")
-	implementation("com.slack.api:bolt-socket-mode:1.27.2")
+	implementation("com.slack.api:bolt-socket-mode:1.27.3")
 	implementation("javax.websocket:javax.websocket-api:1.1")
 	implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:(,1.19]")
 	// ***** OAUTH DEPENDENCIES *****
