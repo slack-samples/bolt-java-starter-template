@@ -93,7 +93,7 @@
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt-jetty</artifactId>
-            <version>1.28.0</version>
+            <version>1.28.1</version>
         </dependency>
         <!-- ***** TEST DEPENDENCIES ***** -->
         <dependency>
