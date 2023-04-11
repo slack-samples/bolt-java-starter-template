@@ -1,6 +1,6 @@
 plugins {
 	id 'application'
-	id "com.diffplug.spotless" version "6.17.0"
+	id "com.diffplug.spotless" version "6.18.0"
 }
 
 java {
@@ -15,8 +15,8 @@ repositories {
 dependencies {
 	implementation("ch.qos.logback:logback-classic:1.4.6")
 	// ***** SOCKET MODE DEPENDENCIES ***** -->
-	implementation("com.slack.api:bolt:1.28.1")
-	implementation("com.slack.api:bolt-socket-mode:1.28.1")
+	implementation("com.slack.api:bolt:1.29.1")
+	implementation("com.slack.api:bolt-socket-mode:1.29.1")
 	implementation("javax.websocket:javax.websocket-api:1.1")
 	implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:(,1.19]")
 	// ***** OAUTH DEPENDENCIES *****
