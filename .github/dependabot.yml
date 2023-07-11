@@ -14,3 +14,7 @@ updates:
     ignore:
       - dependency-name: "tyrus-standalone-client"
         versions: [ "2.x" ]
+    groups:
+      bolt-maven:
+        patterns:
+          - "bolt*"
