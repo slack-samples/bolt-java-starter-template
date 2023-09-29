@@ -21,4 +21,4 @@ updates:
     groups:
       bolt-maven:
         patterns:
-          - "bolt*"
+          - "com.slack.api:bolt*"
