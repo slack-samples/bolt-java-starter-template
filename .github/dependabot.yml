@@ -22,3 +22,7 @@ updates:
       bolt-maven:
         patterns:
           - "com.slack.api:bolt*"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
