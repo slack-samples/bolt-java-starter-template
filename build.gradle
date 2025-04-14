@@ -22,7 +22,7 @@ dependencies {
 	// ***** OAUTH DEPENDENCIES *****
 	implementation("com.slack.api:bolt-jetty:1.45.3")
 	// ***** TEST DEPENDENCIES *****
-	testImplementation('org.junit.jupiter:junit-jupiter-engine:5.12.1')
+	testImplementation('org.junit.jupiter:junit-jupiter-engine:5.12.2')
 	testImplementation('org.mockito:mockito-core:5.17.0')
 }
 
