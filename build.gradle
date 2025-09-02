@@ -1,11 +1,12 @@
 plugins {
 	id 'application'
 	id "com.diffplug.spotless" version "7.2.1"
+	id 'jvm-test-suite'
 }
 
 java {
-	sourceCompatibility = JavaVersion.VERSION_11
-	targetCompatibility = JavaVersion.VERSION_11
+	sourceCompatibility = JavaVersion.VERSION_17
+	targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -15,23 +16,28 @@ repositories {
 dependencies {
 	implementation("ch.qos.logback:logback-classic:1.5.18")
 	// ***** SOCKET MODE DEPENDENCIES ***** -->
-	implementation("com.slack.api:bolt:1.45.3")
-	implementation("com.slack.api:bolt-socket-mode:1.45.3")
+	implementation("com.slack.api:bolt:1.45.4")
+	implementation("com.slack.api:bolt-socket-mode:1.45.4")
 	implementation("javax.websocket:javax.websocket-api:1.1")
 	implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:(,1.19]")
 	// ***** OAUTH DEPENDENCIES *****
-	implementation("com.slack.api:bolt-jetty:1.45.3")
+	implementation("com.slack.api:bolt-jetty:1.45.4")
 	// ***** TEST DEPENDENCIES *****
-	testImplementation('org.junit.jupiter:junit-jupiter-engine:5.13.4')
-	testImplementation('org.mockito:mockito-core:5.18.0')
+	testImplementation('org.junit.jupiter:junit-jupiter-api:5.13.4')
+	testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.13.4')
+	testImplementation('org.mockito:mockito-core:5.19.0')
 }
 
 application {
 	mainClass = 'Main'
 }
 
-tasks.named('test') {
-	useJUnit()
+testing {
+	suites {
+		test {
+			useJUnitJupiter()
+		}
+	}
 }
 
 spotless {

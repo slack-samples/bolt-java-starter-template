@@ -72,12 +72,12 @@
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt</artifactId>
-            <version>1.45.3</version>
+            <version>1.45.4</version>
         </dependency>
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt-socket-mode</artifactId>
-            <version>1.45.3</version>
+            <version>1.45.4</version>
         </dependency>
         <dependency>
             <groupId>javax.websocket</groupId>
@@ -93,7 +93,7 @@
         <dependency>
             <groupId>com.slack.api</groupId>
             <artifactId>bolt-jetty</artifactId>
-            <version>1.45.3</version>
+            <version>1.45.4</version>
         </dependency>
         <!-- ***** TEST DEPENDENCIES ***** -->
         <dependency>
@@ -105,7 +105,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-core</artifactId>
-            <version>5.18.0</version>
+            <version>5.19.0</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

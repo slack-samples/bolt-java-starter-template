@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: ['11', '17']
+        java-version: ['17', '21']
 
     steps:
       - uses: actions/checkout@v5
@@ -22,4 +22,4 @@ jobs:
       - name: Lint
         run: gradle spotlessCheck
       - name: Build & Test
-        run: gradle test -x spotlessApply
+        run: gradle test -x spotlessApply --info
