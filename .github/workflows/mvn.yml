@@ -13,7 +13,6 @@ jobs:
         java-version:
           - "17"
           - "21"
-          - "25"
 
     steps:
       - uses: actions/checkout@v5
