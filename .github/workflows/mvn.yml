@@ -2,7 +2,7 @@ name: Lint & Test with Maven
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 jobs:
@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        java-version: ['11', '17', '21']
+        java-version:
+          - "17"
+          - "21"
 
     steps:
       - uses: actions/checkout@v5
@@ -18,7 +20,7 @@ jobs:
         uses: actions/setup-java@v5
         with:
           java-version: ${{ matrix.java-version }}
-          distribution: 'adopt'
+          distribution: "adopt"
       - name: Lint
         run: mvn --batch-mode spotless:check
       - name: Build & Test
