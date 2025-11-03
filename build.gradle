@@ -16,12 +16,12 @@ repositories {
 dependencies {
 	implementation("ch.qos.logback:logback-classic:1.5.20")
 	// ***** SOCKET MODE DEPENDENCIES ***** -->
-	implementation("com.slack.api:bolt:1.45.4")
-	implementation("com.slack.api:bolt-socket-mode:1.45.4")
+	implementation("com.slack.api:bolt:1.46.0")
+	implementation("com.slack.api:bolt-socket-mode:1.46.0")
 	implementation("javax.websocket:javax.websocket-api:1.1")
 	implementation("org.glassfish.tyrus.bundles:tyrus-standalone-client:(,1.19]")
 	// ***** OAUTH DEPENDENCIES *****
-	implementation("com.slack.api:bolt-jetty:1.45.4")
+	implementation("com.slack.api:bolt-jetty:1.46.0")
 	// ***** TEST DEPENDENCIES *****
 	testImplementation('org.junit.jupiter:junit-jupiter-api:6.0.1')
 	testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:6.0.1')
