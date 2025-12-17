@@ -44,7 +44,7 @@ spotless {
 	format 'misc', {
 		target '*.gradle', '.gitignore'
 		trimTrailingWhitespace()
-		indentWithTabs(4)
+		leadingSpacesToTabs(4)
 		endWithNewline()
 	}
 	java {
