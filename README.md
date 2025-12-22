@@ -10,9 +10,9 @@ Before getting started, make sure you have a development workspace where you hav
 
 1. Open [https://api.slack.com/apps/new](https://api.slack.com/apps/new) and choose "From an app manifest"
 2. Choose the workspace you want to install the application to
-3. Copy the contents of [manifest.json](./manifest.json) into the text box that says `*Paste your manifest code here*` (within the JSON tab) and click *Next*
-4. Review the configuration and click *Create*
-5. Click *Install to Workspace* and *Allow* on the screen that follows. You'll then be redirected to the App Configuration dashboard.
+3. Copy the contents of [manifest.json](./manifest.json) into the text box that says `*Paste your manifest code here*` (within the JSON tab) and click _Next_
+4. Review the configuration and click _Create_
+5. Click _Install to Workspace_ and _Allow_ on the screen that follows. You'll then be redirected to the App Configuration dashboard.
 
 #### Environment Variables
 
@@ -34,13 +34,14 @@ export SLACK_APP_TOKEN=<your-app-token>
 git clone https://github.com/slack-samples/bolt-java-starter-template.git
 
 # Change into this project directory
-cd bolt-java-template
+cd bolt-java-starter-template
 ```
 
 #### Maven: Run
 
 Ensure [maven](https://maven.apache.org/index.html) is installed on your local environment.
-* We recommend using [brew to install Maven on macOS](https://formulae.brew.sh/formula/maven)
+
+- We recommend using [brew to install Maven on macOS](https://formulae.brew.sh/formula/maven)
 
 ```zsh
 # Install the dependencies and compile
@@ -56,14 +57,15 @@ mvn clean test
 mvn clean compile exec:java -Dexec.mainClass="Main"
 ```
 
-**NOTE**: If you chose to use Maven as your build tool you can remove the `builde.gradle` file from this project.
+**NOTE**: If you chose to use Maven as your build tool you can remove the `build.gradle` file from this project.
 
-------
+---
 
 #### Gradle: Run
 
 Ensure [gradle](https://gradle.org/) is installed on your local environment.
-* We recommend using [brew to install Gradle on macOS](https://formulae.brew.sh/formula/gradle)
+
+- We recommend using [brew to install Gradle on macOS](https://formulae.brew.sh/formula/gradle)
 
 ```zsh
 # Run tests
@@ -124,4 +126,4 @@ Navigate to **OAuth & Permissions** in your app configuration and click **Add a 
 https://3cb89939.ngrok.io/slack/oauth/callback
 ```
 
-*NOTE:* if you do not require OAuth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OAuthMain.java`
+_NOTE:_ if you do not require OAuth you can remove all `OAUTH DEPENDENCIES` in the `pom.xml` or `build.gradle` files, along with `src/main/java/OAuthMain.java`
