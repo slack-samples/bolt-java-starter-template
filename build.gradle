@@ -14,7 +14,7 @@ repositories {
 }
 
 dependencies {
-	implementation("ch.qos.logback:logback-classic:1.5.24")
+	implementation("ch.qos.logback:logback-classic:1.5.25")
 	// ***** SOCKET MODE DEPENDENCIES ***** -->
 	implementation("com.slack.api:bolt:1.46.0")
 	implementation("com.slack.api:bolt-socket-mode:1.46.0")
