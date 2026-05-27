@@ -10,7 +10,7 @@
     },
     "bot_user": {
       "display_name": "Bolt Template App",
-      "always_online": false
+      "always_online": true
     },
     "shortcuts": [
       {
