@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v6.0.0
         with:
           java-version: ${{ matrix.java-version }}
-          distribution: "adopt"
+          distribution: "temurin"
       - name: Lint
         run: gradle spotlessCheck
       - name: Build & Test
