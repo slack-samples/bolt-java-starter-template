@@ -40,9 +40,10 @@ public class SampleBlockActionListener implements BlockActionHandler {
             var viewForTheCategory = buildViewByCategory(categoryId, privateMetadata);
 
             try {
-                var viewsUpdateResponse = ctx.client().viewsUpdate(r -> r.viewId(currentView.getId())
-                        .hash(currentView.getHash())
-                        .view(viewForTheCategory));
+                var viewsUpdateResponse = ctx.client()
+                        .viewsUpdate(r -> r.viewId(currentView.getId())
+                                .hash(currentView.getHash())
+                                .view(viewForTheCategory));
                 if (!viewsUpdateResponse.isOk()) {
                     ctx.logger.error(viewsUpdateResponse.toString());
                 }
