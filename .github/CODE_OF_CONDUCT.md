@@ -44,13 +44,13 @@ include:
 Examples of unacceptable behavior by participants include:
 
 * The use of sexualized language or imagery and unwelcome sexual attention or
-advances
+  advances
 * Personal attacks, insulting/derogatory comments, or trolling
 * Public or private harassment
 * Publishing, or threatening to publish, others' private information—such as
-a physical or electronic address—without explicit permission
+  a physical or electronic address—without explicit permission
 * Other conduct which could reasonably be considered inappropriate in a
-professional setting
+  professional setting
 * Advocating for or encouraging any of the above behaviors
 
 ## Our Responsibilities
@@ -103,3 +103,4 @@ This Code of Conduct is licensed under the [Creative Commons Attribution 3.0 Lic
 [cncf-coc]: https://github.com/cncf/foundation/blob/master/code-of-conduct.md
 [microsoft-coc]: https://opensource.microsoft.com/codeofconduct/
 [cc-by-3-us]: https://creativecommons.org/licenses/by/3.0/us/
+
